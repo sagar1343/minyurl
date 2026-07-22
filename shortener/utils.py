@@ -33,6 +33,3 @@ def convert_to_base_62(number):
     convert id to bas62 encoding
     """
     return base62.encode(number)
-
-
-convert_to_base_62(96471231)

@@ -4,7 +4,6 @@ from .models import Link
 from .serializers import CreateLinkSerializer, LinkSerializer
 from django.shortcuts import redirect, get_object_or_404
 from rest_framework.views import APIView
-from django.db.models import F
 from rest_framework.response import Response
 
 
