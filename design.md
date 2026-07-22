@@ -28,7 +28,7 @@ response 201
 }
 
 Request
-GET api/t6sj9a6v/
+GET /t6sj9a6v/
 
 Response
 response 302 temperory redirect

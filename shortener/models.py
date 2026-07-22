@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Link(models.Model):
-    owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="links")
     url = models.URLField()
     short_code = models.CharField(max_length=6, unique=True, db_index=True)
     clicks = models.PositiveIntegerField(default=0)
