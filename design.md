@@ -17,3 +17,26 @@
 - 2. Redirection -> Short URL -> Long URL
 
 
+Request
+POST /api/links
+body {"url":"https://www.amazon.in/...."}
+
+Response
+response 201
+{
+    "short_code": "https://tinyurl.com/t6sj9a6v"
+}
+
+Request
+GET api/t6sj9a6v/
+
+Response
+response 302 temperory redirect
+query shortcode -> long_url
+click + 1
+redirect(long_url)
+
+
+
+
+
