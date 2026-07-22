@@ -13,7 +13,7 @@
 - 56 Billion records
 - 1 shortcode = 6 byte + long = 50 + 4 =  100 Byte * 56 Billion = 5.6TB  ~= 10tb
 
-- 1. Shortening - Long URL Shorten
+- 1. Shortening - Long URL Shorten done
 - 2. Redirection -> Short URL -> Long URL
 
 
@@ -40,3 +40,34 @@ redirect(long_url)
 
 
 
+
+<!-- Short code -->
+<!-- 6 random chars -->
+<!-- ax5Y9c -->
+<!-- ax5Y9c -->
+
+
+
+#
+# 12031 = 1*10^4 + 2*10^3 + 0*10^2 + 3*10 + 1*10^0
+
+
+3, 8, 3 ->  383
+# 12031 = 3*62^2 + 8*62^1 + 3*62^0
+
+96471231
+[37,35,48,32,6]
+<!-- bZmW6 -->
+<!--  -->
+
+# 12031 % 10 = 1,  Q=1203
+# 1203 % 10 = 3
+# 20123
+
+# 0-9  10-35 36-61
+# 0-9, [A-Z] [a-z]
+
+# base62
+
+<!-- 20123 --> 383
+<!-- 96471231 --> bZmW6

@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Link
+from .utils import convert_to_base_62
 
 
 class CreateLinkSerializer(serializers.ModelSerializer):
@@ -9,7 +10,11 @@ class CreateLinkSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data["owner"] = self.context.get("request").user
-        return super().create(validated_data)
+        instance = self.Meta.model.objects.create(**validated_data)
+        short_code = convert_to_base_62(instance.id)
+        instance.short_code = short_code
+        instance.save()
+        return instance
 
 
 class LinkSerializer(serializers.ModelSerializer):

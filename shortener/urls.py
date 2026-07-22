@@ -4,8 +4,9 @@ from rest_framework.routers import SimpleRouter
 
 router = SimpleRouter()
 
-router.register("shorten-links", views.LinkViewset, basename="links")
+router.register("api/shorten-links", views.LinkViewset, basename="links")
 
 urlpatterns = [
-    path("links", views.CreateLink.as_view(), name="create-link"),
+    path("api/links", views.CreateLink.as_view(), name="create-link"),
+    path("<str:code>/", views.RedirectURLView.as_view(), name="redirect-link"),
 ] + router.urls
