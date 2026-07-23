@@ -5,6 +5,8 @@ from .serializers import CreateLinkSerializer, LinkSerializer
 from django.shortcuts import redirect, get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import permissions
+from rest_framework import filters
 
 
 # Create your views here.
@@ -15,9 +17,12 @@ class CreateLink(CreateAPIView):
 
 class LinkViewset(ModelViewSet):
     serializer_class = LinkSerializer
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter]
+    ordering_fields = ["id"]
+    permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
-        return Link.objects.filter(owner=self.request.user)
+        return Link.objects.all()
 
 
 class RedirectURLView(APIView):
